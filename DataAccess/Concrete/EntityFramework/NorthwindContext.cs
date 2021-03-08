@@ -1,4 +1,5 @@
-﻿using Entities.Concrete;
+﻿using Entities;
+using Entities.Concrete;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -19,5 +20,15 @@ namespace DataAccess.Concrete.EntityFramework
         public DbSet<Product> Products { get; set; } //Product nesnemi veritabanındaki products ile bağla
         public DbSet<Category> Categories { get; set; }
         public DbSet<Customer> Customers { get; set; }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Employee>().ToTable("Employees");
+
+            modelBuilder.Entity<Employee>().Property(p => p.Id).HasColumnName("EmployeeID");
+            modelBuilder.Entity<Employee>().Property(p => p.Name).HasColumnName("FirstName");
+            modelBuilder.Entity<Employee>().Property(p => p.Surname).HasColumnName("LastName");
+        }
+
+        public DbSet<Order> Orders { get; set; }
     }
 }

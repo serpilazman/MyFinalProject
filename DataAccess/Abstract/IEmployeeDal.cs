@@ -1,13 +1,13 @@
 ﻿using Core.DataAccess;
-using Entities.Concrete;
+using DataAccess.Abstract;
+using Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DataAccess.Abstract
 {
-   public interface ICategoryDal:IEntityRepository<Category>
+ public  interface IEmployeeDal:IEntityRepository<Employee>
     {
-        
     }
 }
