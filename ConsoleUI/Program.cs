@@ -15,16 +15,19 @@ namespace ConsoleUI
         static void Main(string[] args)
         {
             //Data Transformation Object
-            ProductTest();
-
+            //ProductTest();
             //CategoryTest();
+            //EmployeeListTest();
 
-            //EmployeeManager employeeManager = new EmployeeManager(new EfEmployeeDal());
-            //foreach (var employee in employeeManager.GetAll())
-            //{
-            //    Console.WriteLine("{0}/{1}/{2}",employee.Id,employee.Name,employee.Surname);
-            //}
+        }
 
+        private static void EmployeeListTest()
+        {
+            EmployeeManager employeeManager = new EmployeeManager(new EfEmployeeDal());
+            foreach (var employee in employeeManager.GetAll())
+            {
+                Console.WriteLine("{0}/{1}/{2}", employee.Id, employee.Name, employee.Surname);
+            }
         }
 
         private static void CategoryTest()

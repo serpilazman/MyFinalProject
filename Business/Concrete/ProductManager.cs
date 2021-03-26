@@ -38,7 +38,7 @@ namespace Business.Concrete
             // InMemoryProductDal ınMemoryProductDal = new InMemoryProductDal(); Bir iş sınıfı başka sınıfları new'lemez
 
 
-            if (DateTime.Now.Hour==22)
+            if (DateTime.Now.Hour == 22)
             {
                 return new ErrorDataResult<List<Product>>(Messages.MaintenanceTime);
             }
